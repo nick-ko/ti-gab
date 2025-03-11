@@ -1,0 +1,37 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond dégradé subtil -->
+  <defs>
+    <linearGradient id="digitalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#f8fafc"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fond principal -->
+  <rect width="800" height="600" fill="url(#digitalGrad)"/>
+  
+  <!-- Motif binaire stylisé -->
+  <g fill="#f1f5f9" font-family="Courier" font-size="12">
+    <text x="100" y="100">010100$</text>
+    <text x="300" y="200">110010€</text>
+    <text x="500" y="300">001100£</text>
+    <text x="200" y="400">101010$</text>
+    <text x="400" y="500">011100€</text>
+  </g>
+  
+  <!-- Graphique en barres simplifié -->
+  <g fill="#e2e8f0" opacity="0.2">
+    <rect x="100" y="350" width="20" height="100"/>
+    <rect x="200" y="300" width="20" height="150"/>
+    <rect x="300" y="250" width="20" height="200"/>
+    <rect x="400" y="200" width="20" height="250"/>
+    <rect x="500" y="150" width="20" height="300"/>
+  </g>
+  
+  <!-- Lignes de connexion -->
+  <g stroke="#f1f5f9" stroke-width="0.5" opacity="0.3">
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+  </g>
+</svg>
