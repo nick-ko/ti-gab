@@ -1,26 +1,23 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:t_gab/app/config/app_colors.dart';
+import 'package:t_gab/presentation/pages/home/main_page.dart';
 import 'controllers/auth/auth_binding.dart';
-import 'pages/home/home_page.dart';
-import 'pages/otp/otp_screen.dart';
-import 'pages/withdrawal/withdrawal_screen.dart';
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetCupertinoApp(
+    return GetMaterialApp(
       initialRoute: "/",
       initialBinding: AuthBinding(),
       debugShowCheckedModeBanner: false,
-      theme: const CupertinoThemeData(
-        textTheme: CupertinoTextThemeData(
-          textStyle: TextStyle(
-            fontFamily: 'Roboto',
-          )
-        )
-      ),
-      home: HomePage(),
+      theme: ThemeData(
+          fontFamily: 'Gilroy',
+          textTheme: TextTheme(
+              titleLarge: TextStyle(
+            color: AppColors.textBlue,
+          ))),
+      home: const MainPage(),
     );
   }
 }

@@ -6,14 +6,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:t_gab/presentation/pages/insert_card/insert_card_screen.dart';
 import 'package:t_gab/presentation/pages/operation/select_operation_screen.dart';
+import 'package:t_gab/presentation/pages/otp/otp_screen.dart';
 import 'package:t_gab/presentation/pages/qr_code/qr_code_scanner_screen.dart';
+import 'package:t_gab/presentation/pages/withdrawal/withdrawal_screen.dart';
 import '../../controllers/auth/auth_controller.dart';
 
-
 class CashDepositOperator extends GetView<AuthController> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,8 +146,7 @@ class CashDepositOperator extends GetView<AuthController> {
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 24,
-                            fontFamily: 'Roboto'
-                        ),
+                            fontFamily: 'Roboto'),
                       ),
                     ),
                   ),
@@ -170,12 +167,13 @@ class CashDepositOperator extends GetView<AuthController> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  Container(width: 10,)
+                                  Container(
+                                    width: 10,
+                                  )
                                 ],
                               );
                             },
-                          )
-                      ),
+                          )),
                     ),
                   ),
                 ],
@@ -210,15 +208,20 @@ Widget _buildAmountButton(String amount) {
 }
 
 Widget _buildOperatorLogo(String assetPath) {
-  return Container(
-    width: Get.height/7,
-    height: Get.height/7,
-    decoration: BoxDecoration(
-      shape: BoxShape.circle,
-      color: Colors.white,
-      image: DecorationImage(
-        image: AssetImage(assetPath),
-        fit: BoxFit.cover,
+  return InkWell(
+    onTap: () {
+      Get.to(() => WithdrawalScreen());
+    },
+    child: Container(
+      width: Get.height / 7,
+      height: Get.height / 7,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.white,
+        image: DecorationImage(
+          image: AssetImage(assetPath),
+          fit: BoxFit.cover,
+        ),
       ),
     ),
   );
