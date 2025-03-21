@@ -16,6 +16,3 @@ initServices() async {
   await Get.putAsync(() => LocalStorageService().init());
   print('All services started...');
 }
-
-
-

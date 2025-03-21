@@ -12,13 +12,9 @@ import 'package:t_gab/presentation/pages/operation/select_operation_screen.dart'
 import 'package:t_gab/presentation/pages/qr_code/qr_code_scanner_screen.dart';
 import '../../controllers/auth/auth_controller.dart';
 
-
 class CashDepositScreen extends GetView<AuthController> {
-
   int _secondsRemaining = 5;
   late Timer _timer;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -119,11 +115,12 @@ class CashDepositScreen extends GetView<AuthController> {
                       ),
                       const SizedBox(height: 16),
                       InkWell(
-                        onTap: (){
-                          Get.to(()=>CashDepositSolde());
+                        onTap: () {
+                          Get.to(() => CashDepositSolde());
                         },
                         child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
                           color: const Color(0xFFC13121),
                           child: const Text(
                             'Vous ne pouvez déposer que 40 billets\nmaximum',
@@ -160,8 +157,7 @@ class CashDepositScreen extends GetView<AuthController> {
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 24,
-                            fontFamily: 'Roboto'
-                        ),
+                            fontFamily: 'Roboto'),
                       ),
                     ),
                   ),
@@ -182,12 +178,13 @@ class CashDepositScreen extends GetView<AuthController> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  Container(width: 10,)
+                                  Container(
+                                    width: 10,
+                                  )
                                 ],
                               );
                             },
-                          )
-                      ),
+                          )),
                     ),
                   ),
                 ],
@@ -199,4 +196,3 @@ class CashDepositScreen extends GetView<AuthController> {
     );
   }
 }
-
