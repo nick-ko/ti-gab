@@ -1,9 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:t_gab/app/config/app_colors.dart';
 
-class BtnSuccessConfirmation extends StatelessWidget {
-  const BtnSuccessConfirmation({super.key, this.onTap, required this.text});
-
+class BtnTry extends StatelessWidget {
+  const BtnTry({
+    super.key,
+    this.onTap,
+    required this.text,
+  });
   final void Function()? onTap;
   final String text;
 
@@ -12,9 +16,10 @@ class BtnSuccessConfirmation extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
+        width: 250,
         height: 80,
         decoration: BoxDecoration(
-          color: AppColors.success,
+          color: AppColors.orange,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Padding(
@@ -28,10 +33,7 @@ class BtnSuccessConfirmation extends StatelessWidget {
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 32,
-                    fontFamily: 'Roboto'),
-              ),
-              SizedBox(
-                width: 5,
+                    fontFamily: 'Gilroy'),
               ),
               Container(
                 width: 40,
@@ -41,8 +43,8 @@ class BtnSuccessConfirmation extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
-                  Icons.check,
-                  color: AppColors.success,
+                  CupertinoIcons.arrow_counterclockwise,
+                  color: AppColors.orange,
                 ),
               ),
             ],

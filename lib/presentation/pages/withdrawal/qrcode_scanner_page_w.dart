@@ -11,17 +11,16 @@ import 'package:t_gab/presentation/components/background/background1.dart';
 import 'package:t_gab/presentation/components/btn/btn_title.dart';
 import 'package:t_gab/presentation/components/keyboard/customkeyboard.dart';
 import 'package:t_gab/presentation/components/keyboard/num_touch.dart';
-import 'package:t_gab/presentation/pages/deposit/smnary_page.dart';
 import 'package:t_gab/presentation/pages/withdrawal/summary_page_w.dart';
 
-class QrcodeScannerPage extends StatefulWidget {
-  const QrcodeScannerPage({super.key});
+class QrcodeScannerPageW extends StatefulWidget {
+  const QrcodeScannerPageW({super.key});
 
   @override
-  State<QrcodeScannerPage> createState() => _QrcodeScannerPageState();
+  State<QrcodeScannerPageW> createState() => _QrcodeScannerPageWState();
 }
 
-class _QrcodeScannerPageState extends State<QrcodeScannerPage> {
+class _QrcodeScannerPageWState extends State<QrcodeScannerPageW> {
   final _controller = TextEditingController();
 
   void _onKeyTap(String value) {
@@ -63,7 +62,8 @@ class _QrcodeScannerPageState extends State<QrcodeScannerPage> {
         child: Column(
       children: [
         //titre
-        BtnTitle(title: Utils.capitalize(AppLocalizations.translate('dépôt'))),
+        BtnTitle(
+            title: Utils.capitalize(AppLocalizations.translate('retrait'))),
         const SizedBox(
           height: 20,
         ),
@@ -112,7 +112,7 @@ class _QrcodeScannerPageState extends State<QrcodeScannerPage> {
               Column(
                 children: [
                   GestureDetector(
-                    onTap: () => Get.to(() => const SummnaryPage()),
+                    onTap: () => Get.to(() => const SummnaryPageW()),
                     child: Flex(
                       direction: Axis.vertical,
                       children: [

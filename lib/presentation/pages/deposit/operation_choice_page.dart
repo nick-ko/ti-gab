@@ -5,6 +5,7 @@ import 'package:t_gab/app/util/util.dart';
 import 'package:t_gab/presentation/components/background/background1.dart';
 import 'package:t_gab/presentation/components/btn/btn_operation.dart';
 import 'package:t_gab/presentation/pages/deposit/insert_money_page.dart';
+import 'package:t_gab/presentation/pages/withdrawal/select_operator_w.dart';
 
 class OperationChoicePage extends StatelessWidget {
   const OperationChoicePage({super.key});
@@ -36,6 +37,7 @@ class OperationChoicePage extends StatelessWidget {
                       text: Utils.capitalize(
                           AppLocalizations.translate('dépôt'))),
                   BtnOperation(
+                      onTap: () => Get.to(() => const SelectOperatorPageW()),
                       text: Utils.capitalize(
                           AppLocalizations.translate("retrait"))),
                 ],

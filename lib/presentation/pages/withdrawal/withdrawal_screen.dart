@@ -44,18 +44,20 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                   children: [
                     // En-tête
                     Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Image(
-                            image: AssetImage('assets/images/tinitz-logo.png'),
-                            height: 50,
-                          ),
-
-                        ],
-                      ),
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Image(
+                          image: AssetImage('assets/images/tinitz-logo.png'),
+                          height: 50,
+                        ),
+                      ],
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Divider(height: 7,color: Colors.grey,),
+                      child: Divider(
+                        height: 7,
+                        color: Colors.grey,
+                      ),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -91,7 +93,8 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                                 // Montants prédéfinis
                                 _buildGlassCard(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       const Text(
                                         'Selectionnez le montant  de la transaction',
@@ -105,7 +108,8 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                                       const SizedBox(height: 20),
                                       ListView.builder(
                                         shrinkWrap: true,
-                                        physics: const NeverScrollableScrollPhysics(),
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
                                         itemCount: _predefinedAmounts.length,
                                         itemBuilder: (context, index) {
                                           return Padding(
@@ -113,12 +117,15 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                                             child: _AmountButton(
                                               amount: _predefinedAmounts[index],
                                               isSelected: !_isCustomAmount &&
-                                                  _selectedAmount == _predefinedAmounts[index],
+                                                  _selectedAmount ==
+                                                      _predefinedAmounts[index],
                                               onTap: () {
                                                 setState(() {
                                                   _isCustomAmount = false;
-                                                  _selectedAmount = _predefinedAmounts[index];
-                                                  _customAmountController.clear();
+                                                  _selectedAmount =
+                                                      _predefinedAmounts[index];
+                                                  _customAmountController
+                                                      .clear();
                                                 });
                                               },
                                             ),
@@ -128,7 +135,6 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                                     ],
                                   ),
                                 ),
-
                               ],
                             ),
                           ),
@@ -145,7 +151,8 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                                 // Montant personnalisé
                                 _buildGlassCard(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       const Text(
                                         'Autre Montant :',
@@ -159,7 +166,7 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                                       const SizedBox(height: 20),
                                       CupertinoTextField(
                                         controller: _customAmountController,
-                                       // focusNode: focusNode,
+                                        // focusNode: focusNode,
                                         keyboardType: TextInputType.number,
                                         textAlign: TextAlign.center,
                                         maxLength: 5,
@@ -170,10 +177,12 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                                         ),
                                         decoration: BoxDecoration(
                                           color: Colors.black.withOpacity(0.2),
-                                          borderRadius: BorderRadius.circular(12),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
                                         ),
                                         inputFormatters: [
-                                          FilteringTextInputFormatter.digitsOnly,
+                                          FilteringTextInputFormatter
+                                              .digitsOnly,
                                         ],
                                       ),
                                     ],
@@ -195,9 +204,10 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                           child: ElevatedButton(
                             onPressed: _selectedAmount != null
                                 ? () {
-                              // Gérer la confirmation du retrait
-                              print('Montant sélectionné: $_selectedAmount FCFA');
-                            }
+                                    // Gérer la confirmation du retrait
+                                    print(
+                                        'Montant sélectionné: $_selectedAmount FCFA');
+                                  }
                                 : null,
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.green,
@@ -213,17 +223,14 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
-                                  fontFamily: 'Roboto'
-                              ),
+                                  fontFamily: 'Roboto'),
                             ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(24.0),
                           child: ElevatedButton(
-                            onPressed:  (){
-
-                            },
+                            onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.red,
                               padding: const EdgeInsets.all(16),
@@ -237,8 +244,7 @@ class _WithdrawalScreenState extends State<WithdrawalScreen> {
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
-                                  fontFamily: 'Roboto'
-                              ),
+                                  fontFamily: 'Roboto'),
                             ),
                           ),
                         ),
@@ -304,9 +310,8 @@ class _AmountButton extends StatelessWidget {
                   : Colors.white.withOpacity(0.1),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: isSelected
-                    ? Colors.white
-                    : Colors.white.withOpacity(0.2),
+                color:
+                    isSelected ? Colors.white : Colors.white.withOpacity(0.2),
               ),
             ),
             child: Center(
